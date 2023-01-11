@@ -15,5 +15,10 @@ fileButton.addEventListener('click', () => {
     headers: {
         'Content-Type': 'multipart/form-data',
         'Access-Control-Allow-Origin': '*'
-    }});
+    }}).then( response => {
+
+    })
+    .catch( err => {
+        
+    })
 });

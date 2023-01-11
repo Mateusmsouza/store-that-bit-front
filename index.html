@@ -4,27 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="dist/petal.min.css">
     <link rel="stylesheet" type="text/css" href="dist/wtfforms.css">
+    <link rel="stylesheet" type="text/css" href="dist/petal.min.css">
     <title>Store That Bit</title>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <h1>Hey! This is the POC of store-that-bit.</h1>
-    
-    <form>
-        <div class="form-group">
-            <label class="file">
-                <input type="file" class="input" aria-label="File browser example" id="file-store-input">
-                <span class="file-custom"></span>
-            </label>
-              
-            
+    <header>
+        <div class="container">
+            <h1>Hey! This is the POC of store-that-bit.</h1>
         </div>
+    </header>
 
-        <button id="file-store-button" class="btn green btn-spinner">store file</button>
-    </form>
+    <section class="container col-3">
+            <div>
+            
+                <label class="file mv-5 mv-20">
+                    <input type="file" id="file" aria-label="File browser example">
+                    <span class="file-custom"></span>
+                </label>              
+                
+            </div>
+    
+            <button id="file-store-button" class="btn green btn-spinner">
+                store file <i class="petalicon petalicon-cloud-upload"></i>
+            </button>
+
+            <div class="fullpage-modal-container">
+                <div class="overlay"></div>
+                <div class="fullpage-modal-inner-wrap">
+                  <div class="fullpage-modal">
+                    <span class="close-btn"></span>
+              
+                    <div class="modal-header">
+                      <h3 class="modal-header-text">Header text</h3>
+                      <p class="sub">Header caption</p>
+                    </div>
+                    <div class="modal-body">
+                      <p>...</p>
+                    </div>
+                    <div class="modal-footer btn-row">
+                      <button class="btn hollow gray">Cancel</button>
+                      <button class="btn green align-right">Confirm</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+    </section>
+
     <script src="js/requisitions.js"></script>
 </body>
 </html>
