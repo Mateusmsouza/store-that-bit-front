@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="dist/wtfforms.css">
     <link rel="stylesheet" type="text/css" href="dist/petal.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/center.css">
     <title>Store That Bit</title>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
+    <main class="main-container">
+    <div>
     <header>
-        <div class="container">
-            <h1>Hey! This is the POC of store-that-bit.</h1>
+        <div class="container col-1">
+            <h1>Share your files anonymously and quickly!</h1>
         </div>
     </header>
 
@@ -38,21 +41,21 @@
                     <span class="close-btn"></span>
               
                     <div class="modal-header">
-                      <h3 class="modal-header-text">Header text</h3>
-                      <p class="sub">Header caption</p>
+                      <h3 class="modal-header-text">Your file has been stored :)</h3>
+                      <p class="sub">Share the link to anyone you want.</p>
                     </div>
                     <div class="modal-body">
-                      <p id="file_informative">...</p>
+                      <p id="file_informative"></p>
+                      <p class="sub">If this app helped you, consider support
+                         its development on <a href="https://www.buymeacoffee.com/msouza">buymeacoffee ♥</a>.</p>
                     </div>
-                    <div class="modal-footer btn-row">
-                      <button class="btn hollow gray">Cancel</button>
-                      <button class="btn green align-right">Confirm</button>
-                    </div>
+                    
                   </div>
                 </div>
             </div>
     </section>
-
+    </div>
+    </main>
     <script src="js/requisitions.js"></script>
     <script src="js/showmodal.js"></script>
 </body>
