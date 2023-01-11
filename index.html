@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="dist/petal.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/wtfforms.css">
     <title>Store That Bit</title>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -11,8 +13,18 @@
 <body>
     <h1>Hey! This is the POC of store-that-bit.</h1>
     
-    <input type="file" id="file-store-input">
+    <form>
+        <div class="form-group">
+            <label class="file">
+                <input type="file" class="input" aria-label="File browser example" id="file-store-input">
+                <span class="file-custom"></span>
+            </label>
+              
+            
+        </div>
 
+        <button id="file-store-button" class="btn green btn-spinner">store file</button>
+    </form>
     <script src="js/requisitions.js"></script>
 </body>
 </html>
