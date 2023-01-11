@@ -1,0 +1,15 @@
+.store-that-bit {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.store-that-bit__alert {
+  margin-top: 16px;
+  width: 100%;
+}

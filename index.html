@@ -1,65 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="dist/wtfforms.css">
-    <link rel="stylesheet" type="text/css" href="dist/petal.min.css">
-    <link rel="stylesheet" type="text/css" href="dist/center.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Store That Bit</title>
+  </head>
+  <body>
+    <main class="store-that-bit">
+      <h1>Share your files anonymously and quickly!</h1>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head>
-<body>
-    <main class="main-container">
-    <div>
-    <header>
-        <div class="container col-1">
-            <h1>Share your files anonymously and quickly!</h1>
+      <div>
+        <label class="file mv-5 mv-20">
+          <input type="file" id="file" aria-label="File browser example">
+          <span class="file-custom"></span>
+        </label>              
+      </div>
+
+      <button id="file-store-button" class="btn green btn-spinner">
+        store file <i class="petalicon petalicon-cloud-upload"></i>
+      </button>
+
+      <div class="fullpage-modal-container">
+        <div class="overlay"></div>
+        <div class="fullpage-modal-inner-wrap">
+          <div class="fullpage-modal">
+            <span class="close-btn"></span>
+      
+            <div class="modal-header">
+              <h3 class="modal-header-text">Your file has been stored :)</h3>
+              <p class="sub">Share the link to anyone you want.</p>
+            </div>
+            <div class="modal-body">
+              <p id="file_informative"></p>
+              <p class="sub">
+                If this app helped you, consider support its development on
+                <a href="https://www.buymeacoffee.com/msouza">buymeacoffee ♥</a>.
+              </p>
+            </div>
+          </div>
         </div>
-    </header>
-
-    <section class="container col-3 mb-20">
-            <div>
-            
-                <label class="file mv-5 mv-20">
-                    <input type="file" id="file" aria-label="File browser example">
-                    <span class="file-custom"></span>
-                </label>              
-                
-            </div>
-    
-            <button id="file-store-button" class="btn green btn-spinner">
-                store file <i class="petalicon petalicon-cloud-upload"></i>
-            </button>
-
-            <div class="fullpage-modal-container">
-                <div class="overlay"></div>
-                <div class="fullpage-modal-inner-wrap">
-                  <div class="fullpage-modal">
-                    <span class="close-btn"></span>
-              
-                    <div class="modal-header">
-                      <h3 class="modal-header-text">Your file has been stored :)</h3>
-                      <p class="sub">Share the link to anyone you want.</p>
-                    </div>
-                    <div class="modal-body">
-                      <p id="file_informative"></p>
-                      <p class="sub">If this app helped you, consider support
-                         its development on <a href="https://www.buymeacoffee.com/msouza">buymeacoffee ♥</a>.</p>
-                    </div>
-                    
-                  </div>
-                </div>
-            </div>
-    </section>
-    <div class="alert warning">
+      </div>
+      <div class="alert warning store-that-bit__alert">
         <p><strong>Ops!!</strong> You need.</p>
-    </div>
-    </div>
+      </div>
     </main>
-    <script src="js/requisitions.js"></script>
-    <script src="js/showmodal.js"></script>
-</body>
+
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
