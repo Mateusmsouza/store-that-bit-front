@@ -204,8 +204,8 @@ th {
 }
 @font-face {
   font-family: 'petalicon';
-  src: url('petalicon.eot?20170105');
-  src: url('petalicon.eot?#iefix20170105') format('embedded-opentype'), url('petalicon.woff2?20170105') format('woff2'), url('petalicon.woff?20170105') format('woff'), url('petalicon.ttf?20170105') format('truetype'), url('petalicon.svg?20170105#petalicon') format('svg');
+  src: url('/petalicon.eot?20170105');
+  src: url('/petalicon.eot?#iefix20170105') format('embedded-opentype'), url('/petalicon.woff2?20170105') format('woff2'), url('/petalicon.woff?20170105') format('woff'), url('/petalicon.ttf?20170105') format('truetype'), url('/petalicon.svg?20170105#petalicon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
