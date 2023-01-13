@@ -33,5 +33,5 @@ axios.get(`https://storethatbit.hopto.org/api/file/${uuid}`, {
         download(response.data.url, 'teste')
     })
     .catch( err => {
-
+        console.log(err);
     });
