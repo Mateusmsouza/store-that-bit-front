@@ -5,6 +5,7 @@ WORKDIR /app
 
 ADD . .
 
+RUN npm config set -g production false 
 RUN npm install
 
 
