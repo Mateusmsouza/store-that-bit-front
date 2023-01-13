@@ -6,8 +6,6 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
 let uuid = params.uuid;
 
-console.log(params.uuid)
-
 if (uuid == null){
     alert('file not found');
 }
@@ -26,12 +24,12 @@ function download(url, filename) {
 
 axios.get(`https://storethatbit.hopto.org/api/file/${uuid}`, {
     headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'multipart/form-data',
         'Access-Control-Allow-Origin': '*'
     }}).then( response => {
         console.log(response);
-        download(response.data.url, response.data.name)
+        download(response.data.url, 'teste')
     })
     .catch( err => {
-        console.log(err);
+
     });
