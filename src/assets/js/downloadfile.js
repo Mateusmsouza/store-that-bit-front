@@ -26,7 +26,7 @@ function download(url, filename) {
 
 axios.get(`https://storethatbit.hopto.org/api/file/${uuid}`, {
     headers: {
-        'Content-Type': 'application/jsona',
+        'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
     }}).then( response => {
         console.log(response);
