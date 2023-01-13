@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { showModal } from './showmodal.js'
+import { showModal, showWarning } from './showmodal.js'
 
 const fileInput = document.querySelector('#file');
 
@@ -7,7 +7,7 @@ const fileButton = document.querySelector('#file-store-button');
 
 fileButton.addEventListener('click', () => {
     if (fileInput.files.length == 0){
-        alert('select a file');
+        showWarning();
         return;
     }
 
