@@ -1,9 +1,18 @@
 import axios from 'axios'
 import { showModal, showWarning } from './showmodal.js'
 
-const fileInput = document.querySelector('#file');
+const fileInput = document.getElementById('file');
+const fileLabel = document.getElementById('file-label')
+const fileButton = document.getElementById('file-store-button');
 
-const fileButton = document.querySelector('#file-store-button');
+fileInput.addEventListener('change', () => {
+    if (fileInput.files.length == 0){
+        return;
+    }
+    const [{ name: fileName }] = fileInput.files;
+    fileLabel.setAttribute('data-label', fileName);
+    fileLabel.setAttribute('title', fileName);
+})
 
 fileButton.addEventListener('click', () => {
     if (fileInput.files.length == 0){

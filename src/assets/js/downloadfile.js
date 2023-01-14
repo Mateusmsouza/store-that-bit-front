@@ -6,8 +6,6 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
 let uuid = params.uuid;
 
-console.log(params.uuid)
-
 if (uuid == null){
     alert('file not found');
 }
