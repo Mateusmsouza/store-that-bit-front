@@ -17,13 +17,13 @@ export function showModal (fileuuid) {
 
 let warningFile = document.querySelector(".store-that-bit__alert");
 console.log(warningFile.style)
-warningFile.style.display = 'none';
+warningFile.style.visibility = 'hidden';
 
 export function showWarning () {
     
-    warningFile.style.display = "";
+    warningFile.style.visibility = "visible";
 
     setTimeout(function(){
-        warningFile.style.display = "none";
-    },5000)
+        warningFile.style.visibility = "hidden";
+    },3000)
 };
