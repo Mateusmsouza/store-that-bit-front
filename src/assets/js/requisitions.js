@@ -1,19 +1,35 @@
 import axios from 'axios'
-import { showModal } from './showmodal.js'
+import { showModal, showWarning } from './showmodal.js'
 
-const fileInput = document.querySelector('#file');
+const fileInput = document.getElementById('file');
+const fileLabel = document.getElementById('file-label')
+const fileButton = document.getElementById('file-store-button');
 
-const fileButton = document.querySelector('#file-store-button');
+fileInput.addEventListener('change', () => {
+    if (fileInput.files.length == 0){
+        return;
+    }
+    const [{ name: fileName }] = fileInput.files;
+    fileLabel.setAttribute('data-label', fileName);
+    fileLabel.setAttribute('title', fileName);
+})
 
 fileButton.addEventListener('click', () => {
+    const limitFileSizeInBytes = 20000000;
     if (fileInput.files.length == 0){
-        alert('select a file');
+        showWarning();
         return;
     }
 
-    console.log(fileInput.files);
+    var file = fileInput.files[0];
+
+    if (file.size > limitFileSizeInBytes){
+        showWarning('Your file is too heavy :( it must be less than  20MB.');
+        return;
+    } 
+
     const formData = new FormData();
-    formData.append('file_upload', fileInput.files[0]);
+    formData.append('file_upload', file);
 
     axios.post('https://storethatbit.hopto.org/api/file/update', formData, {
     headers: {
@@ -23,6 +39,6 @@ fileButton.addEventListener('click', () => {
         showModal(response.data.uuid);
     })
     .catch( err => {
-
+        console.log(err);
     })
 });

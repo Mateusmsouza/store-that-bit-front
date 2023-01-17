@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Store That Bit - Download</title>
+    <link rel="stylesheet" href="/assets/css/petal.css">
+    <link rel="stylesheet" href="/assets/css/wtfforms.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+    <main class="store-that-bit">
+        <span class="spinner spinning big mv-20" id="file-spinner"><span></span></span>
+        <p class="sub text-red" id="file-paragraph">Hey, we are looking for you file :)</p>
+
+        <div class="alert large" id="alert-get-file" style="visibility: hidden;">
+            <span class="alert-icon">
+              <i class="petalicon"></i>
+            </span>
+            <div class="alert-text">
+              <h4></h4>
+              <p></p>
+            </div>
+        </div>
+
+    </main>
+
     <script type="module" src="/assets/js/downloadfile.js"></script>
+    <script type="module" src="/assets/js/showalert.js"></script>
 </body>
 </html>

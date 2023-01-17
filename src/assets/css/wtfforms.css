@@ -249,6 +249,9 @@
             user-select: none;
   }
   .file-custom:after {
+    content: attr(data-label);
+  }
+  .file-custom:not([data-label]):after {
     content: "Choose file...";
   }
   .file-custom:before {

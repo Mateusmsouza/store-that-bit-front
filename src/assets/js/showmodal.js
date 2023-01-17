@@ -13,3 +13,21 @@ export function showModal (fileuuid) {
     file_informative.textContent = `https://store-that-bit-front.pages.dev/file/?uuid=${fileuuid}`;
     fileModal.style.display = "table";
 };
+
+
+let warningFile = document.querySelector(".store-that-bit__alert");
+warningFile.style.visibility = 'hidden';
+
+export function showWarning (messageUpdate) {
+    
+    warningFile.style.visibility = "visible";
+    const oldText = warningFile.textContent;
+
+    if (messageUpdate != null){
+        warningFile.textContent = messageUpdate;
+    }
+    setTimeout(function(){
+        warningFile.style.visibility = "hidden";
+        warningFile.textContent = oldText;
+    },3000)
+};
