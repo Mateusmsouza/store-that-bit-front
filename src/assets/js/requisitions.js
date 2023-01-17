@@ -15,14 +15,22 @@ fileInput.addEventListener('change', () => {
 })
 
 fileButton.addEventListener('click', () => {
+    const limitFileSizeInBytes = 20000000;
     if (fileInput.files.length == 0){
         showWarning();
         return;
     }
 
+    var file = fileInput.files[0];
+
+    if (file.size > limitFileSizeInBytes){
+        showWarning('Your file is too heavy :( it must be less than  20MB.');
+        return;
+    } 
+
     console.log(fileInput.files);
     const formData = new FormData();
-    formData.append('file_upload', fileInput.files[0]);
+    formData.append('file_upload', file);
 
     axios.post('https://storethatbit.hopto.org/api/file/update', formData, {
     headers: {

@@ -19,11 +19,16 @@ let warningFile = document.querySelector(".store-that-bit__alert");
 console.log(warningFile.style)
 warningFile.style.visibility = 'hidden';
 
-export function showWarning () {
+export function showWarning (messageUpdate) {
     
     warningFile.style.visibility = "visible";
+    const oldText = warningFile.textContent;
 
+    if (messageUpdate != null){
+        warningFile.textContent = messageUpdate;
+    }
     setTimeout(function(){
         warningFile.style.visibility = "hidden";
+        warningFile.textContent = oldText;
     },3000)
 };
