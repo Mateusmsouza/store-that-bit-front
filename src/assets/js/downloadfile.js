@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { showWarningFileNotFound, showAlertSuccess } from './file.js'
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
@@ -27,9 +28,10 @@ axios.get(`https://storethatbit.hopto.org/api/file/${uuid}`, {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
     }}).then( response => {
-        console.log(response);
         download(response.data.url, response.data.name)
+        showAlertSuccess();
     })
     .catch( err => {
         console.log(err);
+        if (err.response.status == 404) showWarningFileNotFound();
     });

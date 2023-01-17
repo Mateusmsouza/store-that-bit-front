@@ -28,7 +28,6 @@ fileButton.addEventListener('click', () => {
         return;
     } 
 
-    console.log(fileInput.files);
     const formData = new FormData();
     formData.append('file_upload', file);
 
@@ -40,6 +39,6 @@ fileButton.addEventListener('click', () => {
         showModal(response.data.uuid);
     })
     .catch( err => {
-
+        console.log(err);
     })
 });

@@ -16,7 +16,6 @@ export function showModal (fileuuid) {
 
 
 let warningFile = document.querySelector(".store-that-bit__alert");
-console.log(warningFile.style)
 warningFile.style.visibility = 'hidden';
 
 export function showWarning (messageUpdate) {
