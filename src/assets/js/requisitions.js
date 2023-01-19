@@ -14,7 +14,7 @@ fileInput.addEventListener('change', () => {
     fileLabel.setAttribute('title', fileName);
 })
 
-fileButton.addEventListener('click', () => {
+function getAndValidateFile(){
     const limitFileSizeInBytes = 20000000;
     if (fileInput.files.length == 0){
         showWarning();
@@ -26,6 +26,9 @@ fileButton.addEventListener('click', () => {
     if (file.size > limitFileSizeInBytes){
         showWarning('Your file is too heavy :( it must be less than  20MB.');
         return;
+    };
+
+    return file;
     } 
 
     const formData = new FormData();
@@ -36,9 +39,21 @@ fileButton.addEventListener('click', () => {
         'Content-Type': 'multipart/form-data',
         'Access-Control-Allow-Origin': '*'
     }}).then( response => {
+        fileButton.classList.remove('loading');
+        fileButton.classList.add('loading-done');
         showModal(response.data.uuid);
     })
     .catch( err => {
         console.log(err);
     })
+}
+
+fileButton.addEventListener('click', () => {
+    
+    let file = getAndValidateFile();
+    if (file != null){
+        const formData = new FormData();
+        formData.append('file_upload', file);
+        updateFile(formData)
+    };
 });
