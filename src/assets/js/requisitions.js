@@ -29,12 +29,10 @@ function getAndValidateFile(){
     };
 
     return file;
-    } 
+}
 
-    const formData = new FormData();
-    formData.append('file_upload', file);
-
-    axios.post('https://storethatbit.hopto.org/api/file/update', formData, {
+function updateFile(form){
+    axios.post('https://storethatbit.hopto.org/api/file/update', form, {
     headers: {
         'Content-Type': 'multipart/form-data',
         'Access-Control-Allow-Origin': '*'
@@ -46,7 +44,7 @@ function getAndValidateFile(){
     .catch( err => {
         console.log(err);
     })
-}
+};
 
 fileButton.addEventListener('click', () => {
     
