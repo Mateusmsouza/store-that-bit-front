@@ -10,7 +10,7 @@ closeButtonModal.addEventListener("click", () => {
 export function showModal (fileuuid) {
     const file_informative = document.querySelector("#file_informative");
     
-    file_informative.textContent = `https://store-that-bit-front.pages.dev/file/?uuid=${fileuuid}`;
+    file_informative.textContent = `https://storethatbit.app/file/?uuid=${fileuuid}`;
     fileModal.style.display = "table";
 };
 
