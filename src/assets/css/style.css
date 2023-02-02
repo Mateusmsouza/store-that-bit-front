@@ -25,9 +25,15 @@ a{
   width:100%;
   height: 60px;
   background-color: #262626;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width:500px) {
+  .footer ul{
+    display: flex;
+  }
 }
 
 .footer-ul {
@@ -47,14 +53,4 @@ a{
 
 .footer_link {
   text-decoration: none;
-  box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
-}
-
-.footer_link:hover {
-  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
-}
-
-.footer_li:last-child {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
 }
