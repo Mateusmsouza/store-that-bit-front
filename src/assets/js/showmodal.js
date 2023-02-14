@@ -11,7 +11,8 @@ export function showModal (fileuuid) {
     const file_informative = document.querySelector("#file_informative");
     let link = `https://storethatbit.app/file/?uuid=${fileuuid}`;
     file_informative.textContent = link;
-    file_informative.a = link; 
+    file_informative.a = link;
+    file_informative.href = link; 
     fileModal.style.display = "table";
 };
 
