@@ -9,8 +9,10 @@ closeButtonModal.addEventListener("click", () => {
 
 export function showModal (fileuuid) {
     const file_informative = document.querySelector("#file_informative");
-    
-    file_informative.textContent = `https://storethatbit.app/file/?uuid=${fileuuid}`;
+    let link = `https://storethatbit.app/file/?uuid=${fileuuid}`;
+    file_informative.textContent = link;
+    file_informative.a = link;
+    file_informative.href = link; 
     fileModal.style.display = "table";
 };
 

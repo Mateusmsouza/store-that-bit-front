@@ -32,6 +32,7 @@ function getAndValidateFile(){
 }
 
 function updateFile(form){
+    fileButton.classList.add('loading');
     axios.post('https://storethatbit.hopto.org/api/file/update', form, {
     headers: {
         'Content-Type': 'multipart/form-data',
